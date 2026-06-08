@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Imprint Newsletter — ASTI 2026</title>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;700;900&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { background: #f5f0eb; font-family: 'DM Sans', sans-serif; }
+  .newsletter-wrap { width: 680px; margin: 40px auto; }
+  .page { width: 680px; background: #fff; position: relative; overflow: hidden; margin-bottom: 40px; box-shadow: 0 4px 24px rgba(0,0,0,0.10); }
+
+  /* PAGE 1 */
+  .p1-top { background: #CC2222; padding: 48px 48px 0 48px; }
+  .p1-logo-row { display: flex; align-items: center; justify-content: space-between; margin-bottom: 40px; }
+  .p1-logo { font-family: 'Manrope', sans-serif; font-size: 28px; font-weight: 900; color: #fff; letter-spacing: 2px; }
+  .p1-issue { font-size: 11px; color: rgba(255,255,255,0.65); letter-spacing: 3px; text-transform: uppercase; }
+  .p1-hero-headline { font-family: 'Manrope', sans-serif; font-size: 52px; font-weight: 900; color: #fff; line-height: 1.08; margin-bottom: 16px; max-width: 500px; }
+  .p1-subhead { font-size: 15px; color: rgba(255,255,255,0.80); line-height: 1.6; max-width: 440px; margin-bottom: 40px; }
+  .p1-stair { display: flex; align-items: flex-end; }
+  .p1-stair-block { background: #fff; height: 120px; display: flex; align-items: center; justify-content: center; flex: 1; border-top: 4px solid #CC2222; }
+  .p1-stair-block:nth-child(2) { height: 80px; }
+  .p1-stair-block:nth-child(3) { height: 48px; }
+  .p1-stair-num { font-family: 'Manrope', sans-serif; font-size: 42px; font-weight: 900; color: #CC2222; }
+  .p1-stair-label { font-size: 10px; color: #888; letter-spacing: 2px; text-transform: uppercase; margin-top: 4px; }
+  .p1-stair-inner { text-align: center; }
+  .p1-white { background: #fff; padding: 40px 48px 48px; }
+  .p1-tagline-row { display: flex; align-items: center; gap: 16px; margin-bottom: 36px; }
+  .p1-tagline-line { flex: 1; height: 1px; background: #e8e0d8; }
+  .p1-tagline { font-size: 11px; color: #CC2222; letter-spacing: 3px; text-transform: uppercase; font-weight: 600; }
+  .p1-highlights { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+  .p1-hi-card { background: #faf7f4; border-left: 3px solid #CC2222; padding: 20px; border-radius: 0 8px 8px 0; }
+  .p1-hi-num { font-family:'Manrope',sans-serif; font-size:32px; font-weight:900; color:#CC2222; }
+  .p1-hi-desc { font-size:13px; color:#555; margin-top:4px; line-height:1.5; }
+  .p1-footer { background: #1a0a0a; padding: 18px 48px; display: flex; align-items: center; justify-content: space-between; }
+  .p1-footer-text { font-size:11px; color:rgba(255,255,255,0.4); letter-spacing:2px; text-transform:uppercase; }
+  .p1-dot-row { display:flex; gap:12px; }
+  .p1-dot { width:8px; height:8px; border-radius:50%; }
+  .p1-dot.active { background:#CC2222; }
+  .p1-dot.inactive { background:rgba(255,255,255,0.2); border:1px solid rgba(255,255,255,0.3); }
+
+  /* PAGE 2 */
+  .p2-header { background: #fff; padding: 40px 48px 0; border-bottom: 1px solid #f0ebe5; }
+  .p2-eyebrow { font-size:11px; letter-spacing:3px; text-transform:uppercase; color:#CC2222; font-weight:600; margin-bottom:8px; }
+  .p2-title { font-family:'Manrope',sans-serif; font-size:36px; font-weight:900; color:#1a0a0a; margin-bottom:12px; }
+  .p2-divider { width:60px; height:3px; background:#CC2222; margin-bottom:28px; }
+  .p2-feature-hero { background: #CC2222; padding: 36px 48px; display: flex; gap: 32px; align-items: center; }
+  .p2-map-icon { width: 120px; height: 120px; flex-shrink: 0; background: rgba(255,255,255,0.12); border-radius: 50%; display: flex; align-items: center; justify-content: center; }
+  .p2-map-icon svg { width:64px; height:64px; }
+  .p2-feature-label { font-size:10px; letter-spacing:3px; text-transform:uppercase; color:rgba(255,255,255,0.6); margin-bottom:8px; }
+  .p2-feature-name { font-family:'Manrope',sans-serif; font-size:28px; font-weight:900; color:#fff; margin-bottom:10px; line-height:1.1; }
+  .p2-feature-desc { font-size:14px; color:rgba(255,255,255,0.82); line-height:1.65; }
+  .p2-features-grid { padding: 36px 48px; display:grid; grid-template-columns:1fr 1fr; gap:24px; background:#fff; }
+  .p2-feat-card { border:1px solid #f0ebe5; border-radius:10px; padding:24px; position:relative; }
+  .p2-feat-card-accent { position:absolute; top:0; left:0; right:0; height:3px; background:#CC2222; border-radius:10px 10px 0 0; }
+  .p2-feat-icon { font-size:28px; margin-bottom:12px; }
+  .p2-feat-title { font-weight:600; font-size:15px; color:#1a0a0a; margin-bottom:6px; }
+  .p2-feat-body { font-size:13px; color:#666; line-height:1.6; }
+  .p2-feat-tag { display:inline-block; margin-top:10px; font-size:10px; letter-spacing:2px; text-transform:uppercase; color:#CC2222; font-weight:600; }
+  .p2-footer { background:#1a0a0a; padding:16px 48px; display:flex; align-items:center; justify-content:space-between; }
+  .p2-footer-brand { font-family:'Manrope',sans-serif; font-size:16px; color:#fff; font-weight:700; }
+  .p2-page-num { font-size:11px; color:rgba(255,255,255,0.4); letter-spacing:3px; }
+
+  /* PAGE 3 */
+  .p3-hero { background:#1a0a0a; padding:48px 48px 36px; }
+  .p3-hero-label { font-size:11px; letter-spacing:3px; text-transform:uppercase; color:#CC2222; font-weight:600; margin-bottom:12px; }
+  .p3-hero-title { font-family:'Manrope',sans-serif; font-size:42px; font-weight:900; color:#fff; line-height:1.1; margin-bottom:16px; }
+  .p3-hero-sub { font-size:14px; color:rgba(255,255,255,0.65); line-height:1.65; max-width:500px; }
+  .p3-screens { display:flex; }
+  .p3-screen { flex:1; padding:28px 32px; background:#fff; border-right:1px solid #f0ebe5; }
+  .p3-screen:last-child { border-right:none; }
+  .p3-screen-label { font-size:10px; letter-spacing:2px; text-transform:uppercase; color:#CC2222; font-weight:600; margin-bottom:10px; }
+  .p3-screen-title { font-weight:600; font-size:14px; color:#1a0a0a; margin-bottom:8px; }
+  .p3-screen-body { font-size:12px; color:#777; line-height:1.6; }
+  .p3-modules { background:#CC2222; padding:32px 48px; }
+  .p3-modules-title { font-family:'Manrope',sans-serif; font-size:22px; font-weight:900; color:#fff; margin-bottom:20px; }
+  .p3-module-grid { display:grid; grid-template-columns:repeat(4, 1fr); gap:12px; }
+  .p3-module-item { background:rgba(255,255,255,0.12); border-radius:8px; padding:14px 12px; text-align:center; }
+  .p3-module-icon { font-size:20px; margin-bottom:6px; }
+  .p3-module-name { font-size:11px; color:#fff; font-weight:500; line-height:1.3; }
+  .p3-asti { background:#fff; padding:36px 48px; display:flex; gap:32px; align-items:center; border-top:3px solid #CC2222; }
+  .p3-asti-avatar { width:80px; height:80px; flex-shrink:0; background:#CC2222; border-radius:50%; display:flex; align-items:center; justify-content:center; font-family:'Manrope',sans-serif; font-size:24px; font-weight:900; color:#fff; }
+  .p3-asti-label { font-size:10px; letter-spacing:3px; text-transform:uppercase; color:#CC2222; font-weight:600; margin-bottom:8px; }
+  .p3-asti-title { font-family:'Manrope',sans-serif; font-size:24px; font-weight:900; color:#1a0a0a; margin-bottom:8px; }
+  .p3-asti-body { font-size:13px; color:#555; line-height:1.65; }
+  .p3-footer { background:#1a0a0a; padding:16px 48px; display:flex; align-items:center; justify-content:space-between; }
+  .p3-footer-brand { font-family:'Manrope',sans-serif; font-size:16px; color:#fff; font-weight:700; }
+  .p3-page-num { font-size:11px; color:rgba(255,255,255,0.4); letter-spacing:3px; }
+
+  /* PAGE 4 */
+  .p4-header { background:#CC2222; padding:40px 48px 36px; display:flex; gap:40px; align-items:flex-start; }
+  .p4-header-label { font-size:11px; letter-spacing:3px; text-transform:uppercase; color:rgba(255,255,255,0.65); font-weight:600; margin-bottom:10px; }
+  .p4-header-title { font-family:'Manrope',sans-serif; font-size:38px; font-weight:900; color:#fff; line-height:1.1; margin-bottom:12px; }
+  .p4-header-body { font-size:14px; color:rgba(255,255,255,0.80); line-height:1.65; }
+  .p4-big-stat { text-align:right; flex-shrink:0; }
+  .p4-big-num { font-family:'Manrope',sans-serif; font-size:72px; font-weight:900; color:#fff; line-height:1; }
+  .p4-big-label { font-size:12px; color:rgba(255,255,255,0.6); letter-spacing:2px; text-transform:uppercase; margin-top:4px; }
+  .p4-stats-row { display:grid; grid-template-columns:1fr 1fr 1fr; background:#fff; border-bottom:1px solid #f0ebe5; }
+  .p4-stat { padding:28px 32px; border-right:1px solid #f0ebe5; }
+  .p4-stat:last-child { border-right:none; }
+  .p4-stat-num { font-family:'Manrope',sans-serif; font-size:36px; font-weight:900; color:#CC2222; }
+  .p4-stat-label { font-size:12px; color:#888; margin-top:4px; letter-spacing:1px; text-transform:uppercase; }
+  .p4-timeline { padding:36px 48px; background:#fff; }
+  .p4-timeline-title { font-family:'Manrope',sans-serif; font-size:22px; font-weight:900; color:#1a0a0a; margin-bottom:24px; }
+  .p4-tl-row { display:flex; gap:0; align-items:stretch; }
+  .p4-tl-item { flex:1; padding:0 16px 0 0; position:relative; }
+  .p4-tl-item:last-child { padding-right:0; }
+  .p4-tl-dot { width:12px; height:12px; background:#CC2222; border-radius:50%; margin-bottom:8px; }
+  .p4-tl-line { position:absolute; top:6px; left:12px; right:0; height:1px; background:#e0d8d0; }
+  .p4-tl-item:last-child .p4-tl-line { display:none; }
+  .p4-tl-month { font-size:10px; letter-spacing:2px; text-transform:uppercase; color:#CC2222; font-weight:600; margin-bottom:4px; }
+  .p4-tl-desc { font-size:12px; color:#555; line-height:1.5; }
+  .p4-cta { background:#1a0a0a; padding:40px 48px; display:flex; align-items:center; justify-content:space-between; gap:32px; }
+  .p4-cta-title { font-family:'Manrope',sans-serif; font-size:24px; font-weight:900; color:#fff; margin-bottom:8px; }
+  .p4-cta-body { font-size:13px; color:rgba(255,255,255,0.55); }
+  .p4-cta-btn { background:#CC2222; color:#fff; font-size:13px; font-weight:600; letter-spacing:1px; text-transform:uppercase; padding:14px 28px; border-radius:4px; text-decoration:none; white-space:nowrap; }
+  .p4-back { background:#CC2222; padding:20px 48px; display:flex; align-items:center; justify-content:space-between; }
+  .p4-back-brand { font-family:'Manrope',sans-serif; font-size:22px; font-weight:900; color:#fff; }
+  .p4-back-tagline { font-size:11px; color:rgba(255,255,255,0.6); letter-spacing:2px; text-transform:uppercase; }
+  .p4-back-dots { display:flex; gap:8px; }
+  .p4-bd { width:8px; height:8px; border-radius:50%; }
+  .p4-bd.a { background:#fff; }
+  .p4-bd.b { background:rgba(255,255,255,0.4); }
+
+  .page-label { font-size:10px; letter-spacing:3px; text-transform:uppercase; color:#aaa; text-align:center; margin-bottom:8px; font-family:'DM Sans',sans-serif; }
+
+  @media print {
+    body { background: #fff; }
+    .newsletter-wrap { margin: 0 auto; }
+    .page { box-shadow: none; margin-bottom: 0; page-break-after: always; }
+    .page-label { display: none; }
+  }
+</style>
+</head>
+<body>
+<div class="newsletter-wrap">
+
+  <!-- PAGE 1: COVER -->
+  <div class="page-label">— PAGE 1 OF 4 —</div>
+  <div class="page">
+    <div class="p1-top">
+      <div class="p1-logo-row">
+        <div class="p1-logo">IMPRINT</div>
+        <div class="p1-issue">ASTI 2026 &nbsp;·&nbsp; Product Newsletter</div>
+      </div>
+      <div class="p1-hero-headline">Six Months of Bold Innovation</div>
+      <div class="p1-subhead">We've shipped five major features that transform how your field teams operate, your customers engage, and your business scales — every single day.</div>
+      <div class="p1-stair">
+        <div class="p1-stair-block"><div class="p1-stair-inner"><div class="p1-stair-num">50K+</div><div class="p1-stair-label">Daily Users</div></div></div>
+        <div class="p1-stair-block"><div class="p1-stair-inner"><div class="p1-stair-num">10+</div><div class="p1-stair-label">Clients</div></div></div>
+        <div class="p1-stair-block"><div class="p1-stair-inner"><div class="p1-stair-num">5</div><div class="p1-stair-label">Features</div></div></div>
+      </div>
+    </div>
+    <div class="p1-white">
+      <div class="p1-tagline-row">
+        <div class="p1-tagline-line"></div>
+        <div class="p1-tagline">What's Inside</div>
+        <div class="p1-tagline-line"></div>
+      </div>
+      <div class="p1-highlights">
+        <div class="p1-hi-card"><div class="p1-hi-num">01</div><div class="p1-hi-desc">Real-Time Field Agent Tracking — live GPS monitoring of your entire ground team</div></div>
+        <div class="p1-hi-card"><div class="p1-hi-num">02</div><div class="p1-hi-desc">Reimagined Dashboard UI — a command centre rebuilt for speed and clarity</div></div>
+        <div class="p1-hi-card"><div class="p1-hi-num">03</div><div class="p1-hi-desc">Optimized Mobile App — new Android UI with a streamlined 14-module flow</div></div>
+        <div class="p1-hi-card"><div class="p1-hi-num">04</div><div class="p1-hi-desc">Asti AI Chatbot — a RAG-powered assistant answering your team's every question</div></div>
+      </div>
+    </div>
+    <div class="p1-footer">
+      <div class="p1-footer-text">Imprint &nbsp;·&nbsp; Field Operations Platform</div>
+      <div class="p1-dot-row">
+        <div class="p1-dot active"></div>
+        <div class="p1-dot inactive"></div>
+        <div class="p1-dot inactive"></div>
+        <div class="p1-dot inactive"></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- PAGE 2 -->
+  <div class="page-label">— PAGE 2 OF 4 —</div>
+  <div class="page">
+    <div class="p2-header">
+      <div class="p2-eyebrow">Feature Spotlight</div>
+      <div class="p2-title">Knowing Where Your Team Is, Always</div>
+      <div class="p2-divider"></div>
+    </div>
+    <div class="p2-feature-hero">
+      <div class="p2-map-icon">
+        <svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <circle cx="32" cy="28" r="12" stroke="white" stroke-width="2.5"/>
+          <circle cx="32" cy="28" r="5" fill="white" fill-opacity="0.9"/>
+          <path d="M32 40 C32 40 18 52 18 52" stroke="white" stroke-width="2" stroke-linecap="round" opacity="0.4"/>
+          <path d="M32 40 C32 40 46 52 46 52" stroke="white" stroke-width="2" stroke-linecap="round" opacity="0.4"/>
+          <circle cx="20" cy="44" r="3" fill="white" fill-opacity="0.6"/>
+          <circle cx="44" cy="44" r="3" fill="white" fill-opacity="0.6"/>
+          <circle cx="32" cy="56" r="3" fill="white" fill-opacity="0.3"/>
+          <path d="M16 20 Q20 12 32 10 Q44 12 48 20" stroke="white" stroke-width="1.5" stroke-dasharray="3 3" fill="none" opacity="0.5"/>
+        </svg>
+      </div>
+      <div>
+        <div class="p2-feature-label">Feature 01 — Now Live</div>
+        <div class="p2-feature-name">Real-Time Field Agent Tracking</div>
+        <div class="p2-feature-desc">See every field agent on a live map the moment they move. Dispatch smarter, respond faster, and give your operations team the situational awareness they've always needed — without a single phone call.</div>
+      </div>
+    </div>
+    <div class="p2-features-grid">
+      <div class="p2-feat-card"><div class="p2-feat-card-accent"></div><div class="p2-feat-icon">🗺️</div><div class="p2-feat-title">Live GPS Map View</div><div class="p2-feat-body">All agents plotted in real-time on an interactive map. Zoom into any territory and see precise agent positions, routes, and status — all updating continuously.</div><div class="p2-feat-tag">Real-time</div></div>
+      <div class="p2-feat-card"><div class="p2-feat-card-accent"></div><div class="p2-feat-icon">📊</div><div class="p2-feat-title">New Dashboard UI</div><div class="p2-feat-body">The command centre has been rebuilt from scratch. Cleaner navigation, smarter data layout, and instant access to the metrics that actually drive decisions.</div><div class="p2-feat-tag">Feature 02</div></div>
+      <div class="p2-feat-card"><div class="p2-feat-card-accent"></div><div class="p2-feat-icon">⏱️</div><div class="p2-feat-title">Daily Activity Insights</div><div class="p2-feat-body">Track check-ins, visit durations, and coverage gaps automatically. Know exactly how your team's day is progressing — in real time, not at end of day.</div><div class="p2-feat-tag">Activity</div></div>
+      <div class="p2-feat-card"><div class="p2-feat-card-accent"></div><div class="p2-feat-icon">🔔</div><div class="p2-feat-title">Smart Alerts & Reports</div><div class="p2-feat-body">Instant notifications for off-route agents, missed visits, or idle time. Exportable daily reports land in your inbox before your morning coffee.</div><div class="p2-feat-tag">Reporting</div></div>
+    </div>
+    <div class="p2-footer">
+      <div class="p2-footer-brand">Imprint</div>
+      <div class="p2-page-num">02 / 04</div>
+    </div>
+  </div>
+
+  <!-- PAGE 3 -->
+  <div class="page-label">— PAGE 3 OF 4 —</div>
+  <div class="page">
+    <div class="p3-hero">
+      <div class="p3-hero-label">Feature 03 — Mobile-First Redesign</div>
+      <div class="p3-hero-title">The Imprint App, Reimagined for Android</div>
+      <div class="p3-hero-sub">Every screen, every tap, and every transition has been redesigned. The new mobile UI brings a 14-module workflow into a single, intuitive experience that field teams love to use every day.</div>
+    </div>
+    <div class="p3-screens">
+      <div class="p3-screen"><div class="p3-screen-label">Navigation</div><div class="p3-screen-title">Streamlined Home Flow</div><div class="p3-screen-body">Agents land on a personalized dashboard with their daily task queue, route, and targets — no digging through menus.</div></div>
+      <div class="p3-screen"><div class="p3-screen-label">Speed</div><div class="p3-screen-title">Optimized UI Flow</div><div class="p3-screen-body">Reduced screen depth by 40%. Every critical action — log a visit, submit a collection, raise a ticket — is now 2 taps away.</div></div>
+      <div class="p3-screen"><div class="p3-screen-label">Design</div><div class="p3-screen-title">Clean Visual System</div><div class="p3-screen-body">Bold typography, high-contrast cards, and a consistent red-and-white design language that's instantly recognizable.</div></div>
+    </div>
+    <div class="p3-modules">
+      <div class="p3-modules-title">14 Modules, One Seamless App</div>
+      <div class="p3-module-grid">
+        <div class="p3-module-item"><div class="p3-module-icon">🏠</div><div class="p3-module-name">Home</div></div>
+        <div class="p3-module-item"><div class="p3-module-icon">📅</div><div class="p3-module-name">Daily Activity</div></div>
+        <div class="p3-module-item"><div class="p3-module-icon">💬</div><div class="p3-module-name">Communication</div></div>
+        <div class="p3-module-item"><div class="p3-module-icon">👥</div><div class="p3-module-name">Customer</div></div>
+        <div class="p3-module-item"><div class="p3-module-icon">📋</div><div class="p3-module-name">Lead & Collection</div></div>
+        <div class="p3-module-item"><div class="p3-module-icon">💰</div><div class="p3-module-name">Payroll</div></div>
+        <div class="p3-module-item"><div class="p3-module-icon">📦</div><div class="p3-module-name">Inventory</div></div>
+        <div class="p3-module-item"><div class="p3-module-icon">🎫</div><div class="p3-module-name">Tickets & Services</div></div>
+        <div class="p3-module-item"><div class="p3-module-icon">🆘</div><div class="p3-module-name">Support & FAQ</div></div>
+        <div class="p3-module-item"><div class="p3-module-icon">⚙️</div><div class="p3-module-name">Settings</div></div>
+        <div class="p3-module-item"><div class="p3-module-icon">📈</div><div class="p3-module-name">Report Details</div></div>
+        <div class="p3-module-item"><div class="p3-module-icon">🎯</div><div class="p3-module-name">Target</div></div>
+        <div class="p3-module-item"><div class="p3-module-icon">🤖</div><div class="p3-module-name">Asti AI</div></div>
+        <div class="p3-module-item"><div class="p3-module-icon">💭</div><div class="p3-module-name">Chat</div></div>
+      </div>
+    </div>
+    <div class="p3-asti">
+      <div class="p3-asti-avatar">AI</div>
+      <div>
+        <div class="p3-asti-label">Feature 04 — AI-Powered</div>
+        <div class="p3-asti-title">Meet Asti AI — Your Intelligent Business Assistant</div>
+        <div class="p3-asti-body">Asti is a RAG-based AI chatbot built directly into Imprint. Ask it anything — policy questions, customer history, collection status, target gaps — and get instant, context-aware answers drawn from your company's own data. No training needed. Just ask.</div>
+      </div>
+    </div>
+    <div class="p3-footer">
+      <div class="p3-footer-brand">Imprint</div>
+      <div class="p3-page-num">03 / 04</div>
+    </div>
+  </div>
+
+  <!-- PAGE 4 -->
+  <div class="page-label">— PAGE 4 OF 4 —</div>
+  <div class="page">
+    <div class="p4-header">
+      <div class="p4-header-text">
+        <div class="p4-header-label">Feature 05 — Growth Milestone</div>
+        <div class="p4-header-title">10+ Clients Onboarded in Just 6 Months</div>
+        <div class="p4-header-body">From first demo to daily deployment — we onboarded 10+ enterprise clients across industries in under six months. Today, Imprint powers over 50,000 daily user sessions, with field teams relying on it as their primary operations tool.</div>
+      </div>
+      <div class="p4-big-stat">
+        <div class="p4-big-num">50K+</div>
+        <div class="p4-big-label">Daily Active<br>Users</div>
+      </div>
+    </div>
+    <div class="p4-stats-row">
+      <div class="p4-stat"><div class="p4-stat-num">10+</div><div class="p4-stat-label">Enterprise Clients</div></div>
+      <div class="p4-stat"><div class="p4-stat-num">6 mo</div><div class="p4-stat-label">To Reach Scale</div></div>
+      <div class="p4-stat"><div class="p4-stat-num">14</div><div class="p4-stat-label">App Modules Shipped</div></div>
+    </div>
+    <div class="p4-timeline">
+      <div class="p4-timeline-title">ASTI 2026 — Feature Launch Timeline</div>
+      <div class="p4-tl-row">
+        <div class="p4-tl-item"><div style="position:relative;"><div class="p4-tl-dot"></div><div class="p4-tl-line"></div></div><div class="p4-tl-month">Jan 2025</div><div class="p4-tl-desc">New Dashboard UI launched for web</div></div>
+        <div class="p4-tl-item"><div style="position:relative;"><div class="p4-tl-dot"></div><div class="p4-tl-line"></div></div><div class="p4-tl-month">Feb 2025</div><div class="p4-tl-desc">Real-Time Field Agent Tracking goes live</div></div>
+        <div class="p4-tl-item"><div style="position:relative;"><div class="p4-tl-dot"></div><div class="p4-tl-line"></div></div><div class="p4-tl-month">Mar 2025</div><div class="p4-tl-desc">Android app redesign with 14-module UI</div></div>
+        <div class="p4-tl-item"><div style="position:relative;"><div class="p4-tl-dot"></div><div class="p4-tl-line"></div></div><div class="p4-tl-month">Apr 2025</div><div class="p4-tl-desc">Asti AI chatbot integrated across app</div></div>
+        <div class="p4-tl-item"><div style="position:relative;"><div class="p4-tl-dot"></div></div><div class="p4-tl-month">Jun 2025</div><div class="p4-tl-desc">10+ clients onboarded, 50K daily users</div></div>
+      </div>
+    </div>
+    <div class="p4-cta">
+      <div>
+        <div class="p4-cta-title">What's Coming in H2 2025</div>
+        <div class="p4-cta-body">Advanced analytics, predictive lead scoring, and deeper Asti AI integrations. Stay tuned — the best is yet to come.</div>
+      </div>
+      <a class="p4-cta-btn" href="#">Read the Roadmap ↗</a>
+    </div>
+    <div class="p4-back">
+      <div class="p4-back-brand">IMPRINT</div>
+      <div class="p4-back-tagline">Field Operations Platform &nbsp;·&nbsp; 2025</div>
+      <div class="p4-back-dots">
+        <div class="p4-bd b"></div><div class="p4-bd b"></div><div class="p4-bd b"></div><div class="p4-bd a"></div>
+      </div>
+    </div>
+  </div>
+
+</div>
+</body>
+</html>
